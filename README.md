@@ -11,4 +11,8 @@ Written with node.
 node server.js
 ```
 
-# Enjoy!
+# Required Modules
+
+1. Express
+2. Multer
+3. Sqlite3
