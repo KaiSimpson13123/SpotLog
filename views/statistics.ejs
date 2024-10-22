@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Spotting Statistics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <div class="container mt-5">
+        <h1 style="color: white;">Statistics</h1>
+        <p style="color: white;">Total Photos: <strong><%= statistics.totalPhotos %></strong></p>
+
+        <h3 style="color: white;">Count by Airline</h3>
+        <ul class="list-group mb-4">
+            <% for (const airline in statistics.airlineCount) { %>
+                <li class="list-group-item">
+                    <%= airline %>: <strong><%= statistics.airlineCount[airline] %></strong>
+                </li>
+            <% } %>
+        </ul>
+
+        <h3 style="color: white;">Count by Plane ICAO</h3>
+        <ul class="list-group mb-4">
+            <% for (const icao in statistics.icaoCount) { %>
+                <li class="list-group-item">
+                    <%= icao %>: <strong><%= statistics.icaoCount[icao] %></strong>
+                </li>
+            <% } %>
+        </ul>
+
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/browse" class="btn btn-secondary">Browse All Pictures</a>
+    </div>
+</body>
+</html>

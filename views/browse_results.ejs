@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pictures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <div class="container mt-5">
+        <h1 style="color: white;">All Pictures</h1>
+        <a href="/" class="btn btn-secondary mt-3">Go back</a>
+        <br>
+        <br>
+        <ul class="list-group">
+            <% rows.forEach(row => { %>
+                <li class="list-group-item">
+                    <a href="/uploads/<%= row.image_filename %>" target="_blank">
+                        <img src="/uploads/<%= row.image_filename %>" alt="Plane Photo" style="width:100px; height:auto;" class="mr-3">
+                        <span>Airline: <%= row.airline %>, ICAO: <%= row.plane_icao %>, Registration: <%= row.plane_reg %>, Date: <%= row.date_taken %>, Location: <%= row.location %></span>
+                    </a>
+                    <form action="/delete/<%= row.id %>" method="POST" style="display:inline;right: 5px;position: absolute;top: 5px;">
+                        <button type="submit" class="btn btn-danger btn-sm"><i style="font-size:14px" class="fa">&#xf014;</i></button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+        <br>
+        <br>
+    </div>
+</body>
+</html>
