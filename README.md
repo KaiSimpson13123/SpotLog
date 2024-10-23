@@ -10,6 +10,10 @@ Written with node.
 ```
 node server.js
 ```
+4. In your browser, go to:
+```
+http://localhost:3000
+```
 
 # Required Modules
 
